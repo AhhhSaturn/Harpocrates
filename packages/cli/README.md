@@ -1,4 +1,4 @@
-# harpocrates
+# cli
 
 To install dependencies:
 

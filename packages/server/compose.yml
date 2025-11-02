@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres
+    shm_size: 128mb
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    volumes:
+          - postgres_data:/var/lib/postgresql/data
+  harp-server:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - 3000:3000
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
+
+volumes:
+  postgres_data:

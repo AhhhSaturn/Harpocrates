@@ -1,4 +1,4 @@
-# harpocrates
+# server
 
 To install dependencies:
 

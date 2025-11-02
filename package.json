@@ -1,0 +1,11 @@
+{
+	"name": "harpocrates",
+	"private": true,
+	"scripts": {
+		"dev": "bun run --filter='@harpocrates/server' dev",
+		"cli": "cd packages/cli; bun run start"
+	},
+	"workspaces": [
+		"packages/*"
+	]
+}
