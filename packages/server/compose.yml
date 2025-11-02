@@ -6,7 +6,9 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
     volumes:
-          - ./drizzle:/docker-entrypoint-initdb.d
+          - type: bind
+            source: ./drizzle/schema.sql
+            target: /docker-entrypoint-initdb.d/schema.sql
           - postgres_data:/var/lib/postgresql
   harp-server:
     build: .
