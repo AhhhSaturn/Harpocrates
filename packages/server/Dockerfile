@@ -6,8 +6,6 @@ COPY . .
 
 RUN bun install
 
-RUN bun run drizzle-kit push
-
 RUN bun run build
 
 FROM gcr.io/distroless/base
