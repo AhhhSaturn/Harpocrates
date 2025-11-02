@@ -1,5 +1,13 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1762113584669,
+      "tag": "0000_premium_devos",
+      "breakpoints": true
+    }
+  ]
 }

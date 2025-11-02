@@ -6,6 +6,7 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
     volumes:
+          - ./drizzle:/docker-entrypoint-initdb.d
           - postgres_data:/var/lib/postgresql/data
   harp-server:
     build: .
