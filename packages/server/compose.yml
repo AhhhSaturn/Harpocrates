@@ -9,13 +9,9 @@ services:
           - type: bind
             source: ./drizzle/schema.sql
             target: /docker-entrypoint-initdb.d/schema.sql
-          - postgres_data:/var/lib/postgresql
   harp-server:
     build: .
     ports:
       - 3000:3000
     environment:
       DATABASE_URL: postgresql://postgres:postgres@postgres:5432/postgres
-
-volumes:
-  postgres_data:
